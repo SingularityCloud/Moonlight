@@ -1,0 +1,21 @@
+vagrant: false
+
+# Change this file to add dependency artifacts, repos, & roles!
+repo: [
+  { repo: "git@github.com:Unicorn-OS/Flatpak.git", name: "Flatpak"},
+  ]
+
+role: [
+  { git: "Flatpak", name: "Flatpak", path: "src/ansible/roles/Flatpak"},
+  ]
+
+library: [
+  # { git: "getGPU", name: "get_gpu.py", path: "src/ansible/library"},
+  ]
+
+# set Inventory
+dynamic_inventory: "{{static_inventory}}"
+test_inventory: true
+
+# dependencies
+git_fetch_update: true
